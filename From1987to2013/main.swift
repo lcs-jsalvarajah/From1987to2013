@@ -31,21 +31,54 @@ while 1 == 1 {
 }
 
 //Process
-var digitOne = 0
-var digitTwo = 0
-var digitThree = 0
-var digitFour = 0
-for _ in 1...validInput - 1 {
-   if validInput/1000 < 10 {
-        digitOne = validInput/1000
-    print(digitOne)
+var nextYar = validInput + 1
+while 1 == 1 {
+    
+    var digit1 = 0
+    var yearInProcess = 0
+    if nextYar / 1000 < 10 {
+        digit1 = nextYar / 1000
+        yearInProcess = nextYar % 1000
+        
+    } else {
+        
     }
-    if validInput % 1000 < 1000 {
-        digitTwo = validInput/100
-        print(digitTwo)
+    
+    let digit2 = yearInProcess / 100
+    yearInProcess = yearInProcess % 100
+    
+    let digit3 = yearInProcess / 10
+    
+    yearInProcess = yearInProcess % 10
+    
+    let digit4 = yearInProcess / 1
+    
+    
+    if digit1 == digit2 || digit1 == digit3 || digit1 == digit4 {
+        nextYar += 1
+        continue
     }
-
+    
+    if digit2 == digit1 || digit2 == digit3 || digit2 == digit4 {
+        nextYar += 1
+        continue
+    }
+    
+    if digit3 == digit1 || digit3 == digit2 || digit3 == digit4 {
+        nextYar += 1
+        continue
+    }
+    
+    if digit4 == digit1 || digit4 == digit2 || digit4 == digit3 {
+        nextYar += 1
+        continue
+    }
+    
+    print("The next year with distinct digits is \(nextYar)")
+    break
     
 }
 
+
+//Need help to understand
 
